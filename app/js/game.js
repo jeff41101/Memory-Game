@@ -14,7 +14,7 @@ Tile.prototype.flip = function() {
 
 function Game(tileNames) {
   var tileDeck = makeDeck(tileNames);
-
+  this.trials = 0;
   this.grid = makeGrid(tileDeck);
   this.message = Game.MESSAGE_CLICK;
   this.unmatchedPairs = tileNames.length;
@@ -25,6 +25,7 @@ function Game(tileNames) {
     }
 
     tile.flip();
+    this.trials += 1;
 
     if (!this.firstPick || this.secondPick) {
 
@@ -41,6 +42,9 @@ function Game(tileNames) {
 
       if (this.firstPick.title === tile.title) {
         this.unmatchedPairs--;
+        if (this.unmatchedPairs === 0) {
+                
+        }
         this.message = (this.unmatchedPairs > 0) ? Game.MESSAGE_MATCH : Game.MESSAGE_WON;
         this.firstPick = this.secondPick = undefined;
       } else {
