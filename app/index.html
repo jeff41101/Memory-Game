@@ -9,20 +9,29 @@
   <script src="js/game.js"></script>
 </head>
 <body ng-controller="GameCtrl">
-  <div>Pairs left to match: {{game.unmatchedPairs}}</div>
-  <div>Matching: {{game.firstPick.title}}</div>
+    <div>Pairs left to match: {{game.unmatchedPairs}}</div>
+    <div>Matching: {{game.firstPick.title}}</div>
 
-  <table>
-    <tr ng-repeat="row in game.grid">
-      <td ng-repeat="tile in row" class="container">
-        <div class="card" ng-class="{flipped: tile.flipped}" ng-click="game.flipTile(tile)">
-            <img class="front" ng-src="img/back.png">
-            <img class="back" ng-src="img/{{tile.title}}.png">
-        </div>
-      </td>
-    </tr>
-  </table>
-
-  <div class="message">{{game.message}}</div>
+    <table>
+        <tr ng-repeat="row in game.grid">
+            <td ng-repeat="tile in row" class="container">
+                <div class="card" ng-class="{flipped: tile.flipped}" ng-click="game.flipTile(tile)">
+                    <img class="front" ng-src="img/back.png">
+                    <img class="back" ng-src="img/{{tile.title}}.png">
+                </div>
+            </td>
+        </tr>
+    </table>
+    B.htm
+    <input type="text" id="T1" size="20" />
+    <input type="button" value="送出↑" onclick="SendMsg()" />
+    <div class="message">{{game.message}}</div>
+    <div class="message">Flips: {{game.trials}}</div>
 </body>
 </html>
+
+<script type="text/javascript">
+    function SendMsg() {
+        parent.document.getElementById("T1").value = document.getElementById("T1").value;
+    }
+</script>
