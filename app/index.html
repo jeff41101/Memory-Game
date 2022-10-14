@@ -22,16 +22,7 @@
             </td>
         </tr>
     </table>
-    B.htm
-    <input type="text" id="T1" size="20" />
-    <input type="button" value="送出↑" onclick="SendMsg()" />
     <div class="message">{{game.message}}</div>
     <div class="message">Flips: {{game.trials}}</div>
 </body>
 </html>
-
-<script type="text/javascript">
-    function SendMsg() {
-        parent.document.getElementById("T1").value = document.getElementById("T1").value;
-    }
-</script>
