@@ -10,8 +10,6 @@ Tile.prototype.flip = function() {
   this.flipped = !this.flipped;
 }
 
-
-
 function Game(tileNames) {
   var tileDeck = makeDeck(tileNames);
   this.trials = 0;
@@ -25,7 +23,8 @@ function Game(tileNames) {
     }
 
     tile.flip();
-    this.trials += 1;
+      this.trials += 1;
+      
 
     if (!this.firstPick || this.secondPick) {
 
@@ -42,7 +41,8 @@ function Game(tileNames) {
 
       if (this.firstPick.title === tile.title) {
         this.unmatchedPairs--;
-        if (this.unmatchedPairs === 0) {
+          if (this.unmatchedPairs === 0) {
+            apiCall(trials);
             // try again
         }
         this.message = (this.unmatchedPairs > 0) ? Game.MESSAGE_MATCH : Game.MESSAGE_WON;
@@ -95,3 +95,37 @@ function removeRandomTile(tileDeck) {
   return tileDeck.splice(i, 1)[0];
 }
 
+function apiCall() {
+    var settings = {
+        "url": "https://wjuc7h96k7.execute-api.ap-northeast-1.amazonaws.com/dev/PassInfo",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Accept": "application/json",
+            "x-api-key": "WHJzpbI0r29A01Hbsg5H776YNuyWe5FI5XCgplRu",
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+            "Trials": "10"
+        }),
+    };
+
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+}
+
+window.addEventListener('message', event => {
+    // IMPORTANT: check the origin of the data!
+    if (event.origin === 'https://teams.microsoft.com/_#/apps/53f34d8b-90ac-4c41-bb75-7b4cec06c305/sections/index?intent=2&category=16&autoNavigationOnDone=true&skipInstalledSuccess=false&filterByPersonal=false&storeLaunchFromChat=false') {
+        // The data was sent from your site.
+        // Data sent with postMessage is stored in event.data:
+        console.log(event.data);
+    } else {
+        // The data was NOT sent from your site!
+        // Be careful! Do not use it. This else branch is
+        // here just for clarity, you usually shouldn't need it.
+        console.log('failed');
+        return;
+    }
+});
