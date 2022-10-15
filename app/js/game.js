@@ -23,7 +23,12 @@ function Game(tileNames) {
     }
 
     tile.flip();
-      this.trials += 1;
+    this.trials += 1;
+    let test = "bbbbbbbbbbbbbbbbbbbbbb";
+    postMessage(
+        test,
+        "https://localhost:53000"
+    );
       
 
     if (!this.firstPick || this.secondPick) {
