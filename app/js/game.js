@@ -26,10 +26,10 @@ function Game(tileNames) {
     this.trials += 1;
 
     /* iframe 的 parent 就是包它的頁面 */
-    /*let test = "bbbbbbbbbbbbbbbbbbbbbb";
+    let test = "bbbbbbbbbbbbbbbbbbbbbb";
     console.log('test = ' + test);
     window.postMessage(test, 'https://jeff41101.github.io'); // https://jeff41101.github.io 就是母頁的網域
-    */
+    
 
     if (!this.firstPick || this.secondPick) {
 
@@ -44,9 +44,9 @@ function Game(tileNames) {
 
     } else {
 
-      if (this.firstPick.title === tile.title) {
-          this.unmatchedPairs--;
-          console.log(this.unmatchedPairs);
+     if (this.firstPick.title === tile.title) {
+        this.unmatchedPairs--;
+        console.log(this.unmatchedPairs);
         if (this.unmatchedPairs === 0) {
             console.log('hit zero!!')
             window.postMessage(this.trials, 'https://jeff41101.github.io');
