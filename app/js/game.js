@@ -23,11 +23,12 @@ function Game(tileNames) {
     }
 
     tile.flip();
-    this.trials += 1;
+      this.trials += 1;
+    console.log(event.origin);
     let test = "bbbbbbbbbbbbbbbbbbbbbb";
     postMessage(
         test,
-        "https://localhost:53000"
+        "https://jeff41101.github.io/"
     );
       
 
@@ -121,7 +122,7 @@ function apiCall() {
     });
 }
 
-
+// Get message from GamePlay WebPage
 window.addEventListener('message', event => {
     // IMPORTANT: check the origin of the data!
     console.log(event.origin);
