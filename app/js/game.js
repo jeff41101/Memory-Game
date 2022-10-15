@@ -115,8 +115,10 @@ function apiCall() {
     });
 }
 
+
 window.addEventListener('message', event => {
     // IMPORTANT: check the origin of the data!
+    console.log(event.origin);
     if (event.origin === 'https://teams.microsoft.com/_#/apps/53f34d8b-90ac-4c41-bb75-7b4cec06c305/sections/index?intent=2&category=16&autoNavigationOnDone=true&skipInstalledSuccess=false&filterByPersonal=false&storeLaunchFromChat=false') {
         // The data was sent from your site.
         // Data sent with postMessage is stored in event.data:
