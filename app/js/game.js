@@ -26,9 +26,9 @@ function Game(tileNames) {
     this.trials += 1;
     console.log(window)
     let test = "bbbbbbbbbbbbbbbbbbbbbb";
-    window.postMessage(
+    parent.postMessage(
         test,
-        "https://localhost:53000"
+        "https://jeff41101.github.io"
     );
       
 
