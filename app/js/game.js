@@ -27,7 +27,7 @@ function Game(tileNames) {
 
     /* iframe 的 parent 就是包它的頁面 */
     let test = "bbbbbbbbbbbbbbbbbbbbbb";
-    //console.log('test = ' + test);
+    console.log('test = ' + test);
     //window.postMessage(test, 'https://jeff41101.github.io'); 
       window.addEventListener('load', () => {
         console.log('in the EventListner');
