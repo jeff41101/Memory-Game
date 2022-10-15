@@ -29,7 +29,7 @@ function Game(tileNames) {
     let test = "bbbbbbbbbbbbbbbbbbbbbb";
     console.log('test = ' + test);
     //window.postMessage(test, 'https://jeff41101.github.io'); 
-      window.addEventListener('load', () => {
+    window.addEventListener('load', () => {
         console.log('in the EventListner');
         parent.postMessage(test, 'https://jeff41101.github.io'); 
     });
