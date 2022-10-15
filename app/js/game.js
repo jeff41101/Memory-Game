@@ -27,7 +27,7 @@ function Game(tileNames) {
 
     /* iframe 的 parent 就是包它的頁面 */
     let test = "bbbbbbbbbbbbbbbbbbbbbb";
-    console.log('test = ' + test);
+    //console.log('test = ' + test);
     window.postMessage(test, 'https://jeff41101.github.io'); // https://jeff41101.github.io 就是母頁的網域
     
 
@@ -49,9 +49,6 @@ function Game(tileNames) {
         console.log(this.unmatchedPairs);
         if (this.unmatchedPairs === 0) {
             console.log('hit zero!!');
-            let test1 = 'abcabcabcacbasd'
-            window.postMessage(test1, 'https://jeff41101.github.io');
-            window.postMessage(this.trials, 'https://jeff41101.github.io');
             // TODO:
             // Needs to impliment reset function
         }
@@ -126,18 +123,18 @@ function apiCall() {
 }
 
 // Get message from GamePlay WebPage
-//window.addEventListener('message', event => {
-//    // IMPORTANT: check the origin of the data!
-//    console.log(event.origin);
-//    if (event.origin === 'https://localhost:53000') {
-//        // The data was sent from your site.
-//        // Data sent with postMessage is stored in event.data:
-//        console.log(event.data);
-//    } else {
-//        // The data was NOT sent from your site!
-//        // Be careful! Do not use it. This else branch is
-//        // here just for clarity, you usually shouldn't need it.
-//        console.log('failed');
-//        return;
-//    }
-//});
+window.addEventListener('message', event => {
+    // IMPORTANT: check the origin of the data!
+    console.log(event.origin);
+    if (event.origin === 'https://localhost:53000') {
+        // The data was sent from your site.
+        // Data sent with postMessage is stored in event.data:
+        console.log(event.data);
+    } else {
+        // The data was NOT sent from your site!
+        // Be careful! Do not use it. This else branch is
+        // here just for clarity, you usually shouldn't need it.
+        console.log('failed');
+        return;
+    }
+});
