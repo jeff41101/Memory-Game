@@ -25,16 +25,14 @@ function Game(tileNames) {
     tile.flip();
     this.trials += 1;
     //console.log(window)
-    //let test = "bbbbbbbbbbbbbbbbbbbbbb";
+    let test = "bbbbbbbbbbbbbbbbbbbbbb";
     //parent.postMessage(
     //    test,
     //    "https://jeff41101.github.io"
     //);
     /* iframe 的 parent 就是包它的頁面 */
-    window.addEventListener('load', () => {
-        const height = document.body.offsetHeight;
-        parent.postMessage(height, 'https://jeff41101.github.io'); // https://jeff41101.github.io 就是母頁的網域
-    });
+    window.postMessage(test, 'https://jeff41101.github.io'); // https://jeff41101.github.io 就是母頁的網域
+    
 
     if (!this.firstPick || this.secondPick) {
 
