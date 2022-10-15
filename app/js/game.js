@@ -25,12 +25,14 @@ function Game(tileNames) {
     tile.flip();
     this.trials += 1;
     //console.log(window)
-    let test = "bbbbbbbbbbbbbbbbbbbbbb";
     //parent.postMessage(
     //    test,
     //    "https://jeff41101.github.io"
     //);
+
     /* iframe 的 parent 就是包它的頁面 */
+    let test = "bbbbbbbbbbbbbbbbbbbbbb";
+    console.log('test = ' + test);
     window.postMessage(test, 'https://jeff41101.github.io'); // https://jeff41101.github.io 就是母頁的網域
     
 
@@ -50,7 +52,7 @@ function Game(tileNames) {
       if (this.firstPick.title === tile.title) {
         this.unmatchedPairs--;
           if (this.unmatchedPairs === 0) {
-            apiCall(trials);
+            // apiCall(trials);
             // TODO:
             // Needs to impliment reset function
         }
