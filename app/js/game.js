@@ -46,9 +46,10 @@ function Game(tileNames) {
 
      if (this.firstPick.title === tile.title) {
         this.unmatchedPairs--;
+        console.log(this.unmatchedPairs);
         if (this.unmatchedPairs === 0) {
             console.log('hit zero!!');
-            let test1 = '1234567';
+            let test1 = 'abcabcabcacbasd'
             window.postMessage(test1, 'https://jeff41101.github.io');
             window.postMessage(this.trials, 'https://jeff41101.github.io');
             // TODO:
