@@ -23,12 +23,12 @@ function Game(tileNames) {
     }
 
     tile.flip();
-      this.trials += 1;
-    console.log(event.origin);
+    this.trials += 1;
+    console.log(window)
     let test = "bbbbbbbbbbbbbbbbbbbbbb";
-    postMessage(
+    window.postMessage(
         test,
-        "https://jeff41101.github.io/"
+        "https://localhost:53000"
     );
       
 
