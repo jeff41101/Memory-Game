@@ -125,18 +125,18 @@ function apiCall() {
 }
 
 // Get message from GamePlay WebPage
-window.addEventListener('message', event => {
-    // IMPORTANT: check the origin of the data!
-    console.log(event.origin);
-    if (event.origin === 'https://localhost:53000') {
-        // The data was sent from your site.
-        // Data sent with postMessage is stored in event.data:
-        console.log(event.data);
-    } else {
-        // The data was NOT sent from your site!
-        // Be careful! Do not use it. This else branch is
-        // here just for clarity, you usually shouldn't need it.
-        console.log('failed');
-        return;
-    }
-});
+//window.addEventListener('message', event => {
+//    // IMPORTANT: check the origin of the data!
+//    console.log(event.origin);
+//    if (event.origin === 'https://localhost:53000') {
+//        // The data was sent from your site.
+//        // Data sent with postMessage is stored in event.data:
+//        console.log(event.data);
+//    } else {
+//        // The data was NOT sent from your site!
+//        // Be careful! Do not use it. This else branch is
+//        // here just for clarity, you usually shouldn't need it.
+//        console.log('failed');
+//        return;
+//    }
+//});
