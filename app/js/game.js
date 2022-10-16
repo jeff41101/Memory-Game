@@ -32,6 +32,8 @@ function Game(tileNames) {
 
     window.parent.postMessage(test, 'https://teams.microsoft.com/'); 
     window.parent.postMessage(test, 'https://localhost:53000'); 
+    window.parent.postMessage(test, '*'); 
+
     window.parent.addEventListener('load', () => {
         console.log('in the EventListner - local host');
         parent.postMessage(test, 'https://localhost:53000'); 
