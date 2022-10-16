@@ -30,8 +30,12 @@ function Game(tileNames) {
     console.log('test = ' + test);
     //window.postMessage(test, 'https://jeff41101.github.io'); 
     window.addEventListener('load', () => {
-        console.log('in the EventListner');
+        console.log('in the EventListner - local host');
         parent.postMessage(test, 'https://localhost:53000'); 
+    });
+    window.addEventListener('load', () => {
+        console.log('in the EventListner - teams microsoft');
+        parent.postMessage(test, 'https://teams.microsoft.com/');
     });
 
     if (!this.firstPick || this.secondPick) {
