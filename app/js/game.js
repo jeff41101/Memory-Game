@@ -26,7 +26,7 @@ function Game(tileNames) {
     this.trials += 1;
 
     /* iframe 的 parent 就是包它的頁面 */
-    let test = "bbbbbbbbbbbbbbbbbbbbbb";
+    let test = "bbbbbbbbbbbbbbbbbbbbbbcccccccc";
     console.log('test = ' + test);
     //window.postMessage(test, 'https://jeff41101.github.io'); 
 
