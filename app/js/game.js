@@ -61,6 +61,7 @@ function Game(tileNames) {
         console.log(this.unmatchedPairs);
         if (this.unmatchedPairs === 0) {
             console.log('hit zero!!');
+            window.parent.postMessage(this.trials, '*');
             // TODO:
             // Needs to impliment reset function
         }
