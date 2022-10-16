@@ -28,10 +28,11 @@ function Game(tileNames) {
     /* iframe 的 parent 就是包它的頁面 */
     let test = "bbbbbbbbbbbbbbbbbbbbbb";
     console.log('test = ' + test);
-    window.postMessage(test, 'https://jeff41101.github.io'); 
-    window.postMessage(test, 'https://teams.microsoft.com/'); 
-    window.postMessage(test, 'https://localhost:53000'); 
-    window.addEventListener('load', () => {
+    //window.postMessage(test, 'https://jeff41101.github.io'); 
+
+    window.parent.postMessage(test, 'https://teams.microsoft.com/'); 
+    window.parent.postMessage(test, 'https://localhost:53000'); 
+    window.parent.addEventListener('load', () => {
         console.log('in the EventListner - local host');
         parent.postMessage(test, 'https://localhost:53000'); 
     });
