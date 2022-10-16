@@ -31,7 +31,7 @@ function Game(tileNames) {
     //window.postMessage(test, 'https://jeff41101.github.io'); 
     window.addEventListener('load', () => {
         console.log('in the EventListner');
-        parent.postMessage(test, 'https://jeff41101.github.io'); 
+        parent.postMessage(test, 'https://localhost:53000'); 
     });
 
     if (!this.firstPick || this.secondPick) {
